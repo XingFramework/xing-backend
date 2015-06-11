@@ -1,10 +1,16 @@
 
 Xing::ResourceMapper
+[32m  should be the correct class[0m
+
+Xing::ResourceMapper
 [32m  should exist[0m
   subclasses
 [32m    should error if it doesn't have an update_record method and a record_class[0m
 [32m    shouldn't error if it does have an update_record and a record_class method[0m
 
-Finished in 0.01328 seconds (files took 0.40582 seconds to load)
-[32m3 examples, 0 failures[0m
+Xing
+[32m  should exist[0m
+
+Finished in 0.01555 seconds (files took 0.47298 seconds to load)
+[32m5 examples, 0 failures[0m
 

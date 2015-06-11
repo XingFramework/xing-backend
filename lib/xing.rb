@@ -13,5 +13,4 @@ module Xing
   end
 end
 
-#$: << File.dirname(__FILE__)
-#require ''
+require 'xing/resource_mapper'
