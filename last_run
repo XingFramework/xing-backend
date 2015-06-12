@@ -16,9 +16,13 @@ Xing::ResourceSerializer
   a subclass
 [32m    should generate a JSON with the proper links and self[0m
 
+Xing::Services::JsonTreeLister
+[32m  should produce a correct tree for a node with no childen[0m
+[32m  should produce a correct tree for a parent of a big tree[0m
+
 Xing
 [32m  should exist[0m
 
-Finished in 0.01729 seconds (files took 0.32673 seconds to load)
-[32m8 examples, 0 failures[0m
+Finished in 0.02103 seconds (files took 0.3302 seconds to load)
+[32m10 examples, 0 failures[0m
 
