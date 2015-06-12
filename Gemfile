@@ -14,6 +14,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'actionpack'
   gem 'rspec'
   gem 'rspec-rails'

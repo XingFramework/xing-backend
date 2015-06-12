@@ -5,6 +5,10 @@ The Xing Framework is a cutting edge web and mobile development platform by Logi
 
 This gem is a Rails Engine that implements the extensions necessary for Rails to function as a Xing back-end API server.
 
+[![Code Climate](https://codeclimate.com/github/LRDesign/xing-backend/badges/gpa.svg)](https://codeclimate.com/github/LRDesign/xing-backend)
+[![Test Coverage](https://codeclimate.com/github/LRDesign/xing-backend/badges/coverage.svg)](https://codeclimate.com/github/LRDesign/xing-backend/coverage)
+
+
 Serializers
 -----------
 
