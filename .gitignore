@@ -11,3 +11,5 @@ frontend/tmp/
 tmp/
 .vim-role
 .sass-cache/
+spec_help/dummy/log/test.log
+
