@@ -7,6 +7,8 @@ This gem is a Rails Engine that implements the extensions necessary for Rails to
 
 [![Code Climate](https://codeclimate.com/github/LRDesign/xing-backend/badges/gpa.svg)](https://codeclimate.com/github/LRDesign/xing-backend)
 [![Test Coverage](https://codeclimate.com/github/LRDesign/xing-backend/badges/coverage.svg)](https://codeclimate.com/github/LRDesign/xing-backend/coverage)
+[![Build Status](https://travis-ci.org/LRDesign/xing-backend.svg?branch=master)](https://travis-ci.org/LRDesign/xing-backend)
+[![Dependency Status](https://gemnasium.com/LRDesign/xing-backend.svg)](https://gemnasium.com/LRDesign/xing-backend)
 
 
 Serializers

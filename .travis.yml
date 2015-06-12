@@ -3,6 +3,9 @@ rvm:
   - 2.2.2
   - 2.1.5
   - 2.0.0
-script: CODECLIMATE_REPO_TOKEN=81025a0db2fb456edde770c27c37191469549d41b09564d2c1cff06160600db0 bundle exec rspec spec
+addons:
+  code_climate:
+    repo_token: 81025a0db2fb456edde770c27c37191469549d41b09564d2c1cff06160600db0
+script: bundle exec rspec spec
   
 
