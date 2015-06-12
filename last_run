@@ -1,4 +1,7 @@
 
+Xing::Services::ErrorConverter
+[32m  should be the correct class[0m
+
 Xing::ResourceSerializer
 [32m  should be the correct class[0m
 
@@ -30,6 +33,6 @@ Xing::Services::JsonTreeLister
 Xing
 [32m  should exist[0m
 
-Finished in 0.03543 seconds (files took 0.34041 seconds to load)
-[32m13 examples, 0 failures[0m
+Finished in 0.03634 seconds (files took 0.33849 seconds to load)
+[32m14 examples, 0 failures[0m
 
