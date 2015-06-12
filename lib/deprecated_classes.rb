@@ -6,7 +6,10 @@ Xing::DEPRECATED_CLASSES = {
   'BaseSerializer'            => 'Xing::Serializers::Base',
   'ResourcesSerializer'       => 'Xing::Serializers::RootResources',
   'JsonTreeLister'            => 'Xing::Services::JsonTreeLister',
-  'ActiveModelErrorConverter' => 'Xing::Services::ErrorConverter'
+  'ActiveModelErrorConverter' => 'Xing::Services::ErrorConverter',
+  'BaseController'            => 'Xing::BaseController',
+  'JsonController'            => 'Xing::BaseController',
+  'ResourcesController'       => 'Xing::RootResourcesController'
 }
 
 

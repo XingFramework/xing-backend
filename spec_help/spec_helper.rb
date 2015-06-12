@@ -17,4 +17,8 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.add_formatter(Cadre::RSpec3::NotifyOnCompleteFormatter)
   config.add_formatter(Cadre::RSpec3::QuickfixFormatter)
+
+  config.around(:type => :deprecation) do |example|
+    ActiveSupport::Deprecation.silence(&example)
+  end
 end

@@ -1,6 +1,6 @@
 require 'deprecated_classes'
 
-describe HypermediaJSONMapper do
+describe HypermediaJSONMapper, :type => :deprecation do
   let :json do
     double('json')
   end

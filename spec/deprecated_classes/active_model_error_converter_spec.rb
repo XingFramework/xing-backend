@@ -1,6 +1,6 @@
 require 'deprecated_classes'
 
-describe ActiveModelErrorConverter do
+describe ActiveModelErrorConverter, :type => :deprecation do
   let :resource do
     double('resource')
   end

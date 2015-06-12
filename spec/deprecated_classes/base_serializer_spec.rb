@@ -1,6 +1,6 @@
 require 'deprecated_classes'
 
-describe BaseSerializer do
+describe BaseSerializer, :type => :deprecation do
   let :resource do
     double('resource')
   end

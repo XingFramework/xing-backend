@@ -1,6 +1,6 @@
 require 'deprecated_classes'
 
-describe JsonTreeLister do
+describe JsonTreeLister, :type => :deprecation do
   let :models do
     double('models')
   end
