@@ -1,4 +1,9 @@
 
+Xing::RootResourcesController
+[32m  should exist[0m
+  responding to GET index
+[32m    should render all routes as json[0m
+
 Xing::BaseController
 [32m  should exist[0m
 
@@ -44,6 +49,6 @@ Xing::Services::JsonTreeLister
 Xing
 [32m  should exist[0m
 
-Finished in 0.03032 seconds (files took 1.28 seconds to load)
-[32m18 examples, 0 failures[0m
+Finished in 0.05382 seconds (files took 2.24 seconds to load)
+[32m20 examples, 0 failures[0m
 

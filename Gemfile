@@ -4,6 +4,7 @@ gem 'rails', "~> 4.2.0"
 gem 'active_model_serializers'
 gem 'i18n'
 gem 'devise_token_auth'
+gem 'rails-rfc6570', '~> 0.3'
 
 group :development, :test do
   gem 'byebug'

@@ -1,8 +1,3 @@
-#require 'action_controller'
-#require 'pp'
-#pp $:
-#require 'devise_token_auth'
-
 module Xing
   class BaseController < ActionController::Base
     include DeviseTokenAuth::Concerns::SetUserByToken
@@ -13,7 +8,7 @@ module Xing
     before_filter :check_format
 
     def check_format
-      if request.subdomains.include? BACKEND_SUBDOMAIN
+      if request.subdomains.include? Xing.backend_subdomain
         if request.headers["Accept"] =~ /json/
           params[:format] = :json
         else
