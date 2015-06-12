@@ -1,4 +1,7 @@
 
+Xing::ResourceSerializer
+[32m  should be the correct class[0m
+
 Xing::ResourceMapper
 [32m  should be the correct class[0m
 
@@ -16,6 +19,6 @@ Xing::ResourceSerializer
 Xing
 [32m  should exist[0m
 
-Finished in 0.0208 seconds (files took 0.33112 seconds to load)
-[32m7 examples, 0 failures[0m
+Finished in 0.01729 seconds (files took 0.32673 seconds to load)
+[32m8 examples, 0 failures[0m
 

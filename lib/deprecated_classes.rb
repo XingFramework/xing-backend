@@ -1,4 +1,14 @@
 require 'xing'
 require 'active_support/deprecation'
 
-HypermediaJSONMapper = ActiveSupport::Deprecation::DeprecatedConstantProxy.new('HypermediaJSONMapper', 'Xing::ResourceMapper')
+Xing::DEPRECATED_CLASSES = {
+  'HypermediaJSONMapper' => 'Xing::ResourceMapper',
+  'BaseSerializer'       => 'Xing::ResourceSerializer'
+}
+
+
+Xing::DEPRECATED_CLASSES.each do |old, new|
+
+  # with great power comes great responsibility
+  Object.const_set(old, ActiveSupport::Deprecation::DeprecatedConstantProxy.new(old, new))
+end
