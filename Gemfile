@@ -7,5 +7,10 @@ gem 'cadre'
 gem 'rails', "~> 4.2.0"
 gem 'corundum'
 gem 'byebug'
+gem 'active_model_serializers'
+
+group :test do
+  gem 'json_spec'
+end
 
 gemspec :name => "xing-backend" #points to default 'gem.gemspec'

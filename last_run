@@ -8,9 +8,14 @@ Xing::ResourceMapper
 [32m    should error if it doesn't have an update_record method and a record_class[0m
 [32m    shouldn't error if it does have an update_record and a record_class method[0m
 
+Xing::ResourceSerializer
+[32m  should exist[0m
+  a subclass
+[32m    should generate a JSON with the proper links and self[0m
+
 Xing
 [32m  should exist[0m
 
-Finished in 0.01555 seconds (files took 0.47298 seconds to load)
-[32m5 examples, 0 failures[0m
+Finished in 0.0208 seconds (files took 0.33112 seconds to load)
+[32m7 examples, 0 failures[0m
 
