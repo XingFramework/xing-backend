@@ -163,6 +163,7 @@ DEPENDENCIES
   cadre
   corundum
   fuubar (~> 2.0.0.rc1)
+  i18n
   json_spec
   rails (~> 4.2.0)
   rspec

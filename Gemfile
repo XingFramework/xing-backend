@@ -8,6 +8,7 @@ gem 'rails', "~> 4.2.0"
 gem 'corundum'
 gem 'byebug'
 gem 'active_model_serializers'
+gem 'i18n'
 
 group :test do
   gem 'json_spec'
