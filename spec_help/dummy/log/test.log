@@ -10,3 +10,5 @@ Processing by Xing::RootResourcesController#index as HTML
 Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
 Processing by Xing::RootResourcesController#index as HTML
 Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Processing by Xing::RootResourcesController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
