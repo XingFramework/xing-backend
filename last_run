@@ -5,6 +5,9 @@ Xing::ResourceSerializer
 Xing::ResourceMapper
 [32m  should be the correct class[0m
 
+Xing::Services::JsonTreeLister
+[32m  should be the correct class[0m
+
 Xing::ResourceMapper
 [32m  should exist[0m
   subclasses
@@ -23,6 +26,6 @@ Xing::Services::JsonTreeLister
 Xing
 [32m  should exist[0m
 
-Finished in 0.02103 seconds (files took 0.3302 seconds to load)
-[32m10 examples, 0 failures[0m
+Finished in 0.02122 seconds (files took 0.33435 seconds to load)
+[32m11 examples, 0 failures[0m
 
