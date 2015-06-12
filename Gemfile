@@ -11,6 +11,7 @@ group :development, :test do
   gem 'cadre'
   gem 'corundum'
   gem 'sqlite3'
+  #gem 'json_spec'
 end
 
 group :test do
@@ -18,7 +19,6 @@ group :test do
   gem 'actionpack'
   gem 'rspec'
   gem 'rspec-rails'
-  #gem 'json_spec'
   gem 'fuubar', "~> 2.0.0.rc1"
 end
 
