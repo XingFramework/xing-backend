@@ -3,7 +3,9 @@ Gem::Specification.new do |spec|
   spec.version		= "0.0.1"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
-    "Patricia Ho" => 'patricia@lrdesign.com'
+    "Patricia Ho" => 'patricia@lrdesign.com',
+    "Hannah Howard" => 'hannah@lrdesign.com',
+    "Judson Lester" => 'judson@lrdesign.com'
   }
   spec.authors		= author_list.keys
   spec.email		= spec.authors.map {|name| author_list[name]}
@@ -43,6 +45,17 @@ Gem::Specification.new do |spec|
   spec.rdoc_options	+= ["--title", "#{spec.name}-#{spec.version} Documentation"]
 
   #spec.add_dependency("", "> 0")
+  spec.add_development_dependency("rspec-rails", "~> 3.2")
+  spec.add_development_dependency("rspec", "~> 3.2")
+  spec.add_development_dependency("json_spec")
+  spec.add_development_dependency 'combustion', '~> 0.5.3'
+  
+
+  spec.add_runtime_dependency 'rails', "~> 4.2.0"
+  spec.add_runtime_dependency 'active_model_serializers'
+  spec.add_runtime_dependency 'i18n'
+  spec.add_runtime_dependency 'devise_token_auth'
+
 
   #spec.post_install_message = "Thanks for installing my gem!"
 end

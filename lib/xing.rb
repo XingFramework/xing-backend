@@ -2,7 +2,13 @@ require 'rails'
 
 module Xing
 
-  class Railtie < Rails::Railtie
+  class Engine < ::Rails::Engine
+    isolate_namespace Xing
+
+    config.generators do |g|
+      g.test_framework :rspec
+    end
+
     initializer 'xing errors locales path' do
       I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'config', 'locales', '*.{rb,yml}')]
     end

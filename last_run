@@ -1,4 +1,7 @@
 
+Xing::BaseController
+[32m  should exist[0m
+
 Xing::Services::ErrorConverter
 [32m  should be the correct class[0m
 
@@ -41,6 +44,6 @@ Xing::Services::JsonTreeLister
 Xing
 [32m  should exist[0m
 
-Finished in 0.03676 seconds (files took 0.34506 seconds to load)
-[32m17 examples, 0 failures[0m
+Finished in 0.03032 seconds (files took 1.28 seconds to load)
+[32m18 examples, 0 failures[0m
 
