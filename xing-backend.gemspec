@@ -48,7 +48,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rspec-rails", "~> 3.2")
   spec.add_development_dependency("rspec", "~> 3.2")
   spec.add_development_dependency("json_spec")
-  spec.add_development_dependency 'combustion', '~> 0.5.3'
   
 
   spec.add_runtime_dependency 'rails', "~> 4.2.0"
