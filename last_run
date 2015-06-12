@@ -2,25 +2,33 @@
 Xing::Services::ErrorConverter
 [32m  should be the correct class[0m
 
-Xing::ResourceSerializer
+Xing::Serializers::Base
 [32m  should be the correct class[0m
 
-Xing::ResourceMapper
+Xing::Mappers::Base
 [32m  should be the correct class[0m
 
 Xing::Services::JsonTreeLister
 [32m  should be the correct class[0m
 
-Xing::ResourceMapper
+Xing::Serializers::RootResources
+[32m  should be the correct class[0m
+
+Xing::Mappers::Base
 [32m  should exist[0m
   subclasses
 [32m    should error if it doesn't have an update_record method and a record_class[0m
 [32m    shouldn't error if it does have an update_record and a record_class method[0m
 
-Xing::ResourceSerializer
-[32m  should exist[0m
+Xing::Serializers::Base
   a subclass
 [32m    should generate a JSON with the proper links and self[0m
+
+Xing::Serializers::RootResources
+  as_json
+[32m    should be present[0m
+[32m    should have JSON path "links/page"[0m
+[32m    should have JSON path "links/menus"[0m
 
 Xing::Services::ErrorConverter
 [32m  should exist[0m
@@ -33,6 +41,6 @@ Xing::Services::JsonTreeLister
 Xing
 [32m  should exist[0m
 
-Finished in 0.03634 seconds (files took 0.33849 seconds to load)
-[32m14 examples, 0 failures[0m
+Finished in 0.03676 seconds (files took 0.34506 seconds to load)
+[32m17 examples, 0 failures[0m
 

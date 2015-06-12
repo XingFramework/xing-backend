@@ -2,8 +2,9 @@ require 'xing'
 require 'active_support/deprecation'
 
 Xing::DEPRECATED_CLASSES = {
-  'HypermediaJSONMapper'      => 'Xing::ResourceMapper',
-  'BaseSerializer'            => 'Xing::ResourceSerializer',
+  'HypermediaJSONMapper'      => 'Xing::Mappers::Base',
+  'BaseSerializer'            => 'Xing::Serializers::Base',
+  'ResourcesSerializer'       => 'Xing::Serializers::RootResources',
   'JsonTreeLister'            => 'Xing::Services::JsonTreeLister',
   'ActiveModelErrorConverter' => 'Xing::Services::ErrorConverter'
 }

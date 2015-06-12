@@ -6,6 +6,6 @@ describe BaseSerializer do
   end
 
   it "should be the correct class" do
-    expect(BaseSerializer.new(resource)).to be_a(Xing::ResourceSerializer)
+    expect(BaseSerializer.new(resource)).to be_a(Xing::Serializers::Base)
   end
 end

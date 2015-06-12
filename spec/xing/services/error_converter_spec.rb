@@ -1,4 +1,5 @@
 require 'xing/services/error_converter'
+require 'active_model'
 require 'i18n'
 
 describe Xing::Services::ErrorConverter do

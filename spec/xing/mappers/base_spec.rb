@@ -1,8 +1,8 @@
-require 'xing/resource_mapper'
+require 'xing/mappers/base'
 
-describe Xing::ResourceMapper do
+describe Xing::Mappers::Base do
   it "should exist" do
-    Xing::ResourceMapper.should be_a(Module)
+    Xing::Mappers::Base.should be_a(Module)
   end
 
   context "subclasses" do
@@ -24,7 +24,7 @@ describe Xing::ResourceMapper do
     end
 
     it "should error if it doesn't have an update_record method and a record_class" do
-      class MyMapper < Xing::ResourceMapper
+      class MyMapper < Xing::Mappers::Base
       end
 
       mapper = MyMapper.new(json)
@@ -36,7 +36,7 @@ describe Xing::ResourceMapper do
     end
 
     it "shouldn't error if it does have an update_record and a record_class method" do
-      class MyBetterMapper < Xing::ResourceMapper
+      class MyBetterMapper < Xing::Mappers::Base
         def update_record
         end
         def record_class

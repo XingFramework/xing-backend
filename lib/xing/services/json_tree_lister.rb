@@ -1,3 +1,6 @@
+require 'active_model_serializers'
+require 'active_support/core_ext'
+
 module Xing
   module Services
     class JsonTreeLister
