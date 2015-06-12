@@ -1,8 +1,8 @@
-require 'xing/resource_serializer'
+require 'xing/serializers/base'
 require 'json_spec'
 
 
-describe Xing::ResourceSerializer do
+describe Xing::Serializers::Base do
   include JsonSpec::Matchers
 
   let :resource do
@@ -13,13 +13,9 @@ describe Xing::ResourceSerializer do
   end
 
 
-  it "should exist" do
-    expect(Xing::ResourceSerializer.new(resource)).to be_a(Xing::ResourceSerializer)
-  end
-
   context "a subclass" do
 
-    class MySerializer < Xing::ResourceSerializer
+    class MySerializer < Xing::Serializers::Base
       attributes :name, :position
       def links
         { :self => 'url_for_this_model' }
@@ -28,7 +24,6 @@ describe Xing::ResourceSerializer do
 
     it "should generate a JSON with the proper links and self" do
       json = MySerializer.new(resource).to_json
-      p json
       expect(json).to be_json_eql('"url_for_this_model"').at_path('links/self')
       expect(json).to be_json_eql('"My Name!"').at_path('data/name')
       expect(json).to be_json_eql('2').at_path('data/position')

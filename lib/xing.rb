@@ -17,5 +17,4 @@ module Xing
 end
 
 require 'xing/resource_mapper'
-require 'xing/resource_serializer'
 require 'xing/services'
