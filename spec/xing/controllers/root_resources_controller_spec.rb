@@ -12,7 +12,7 @@ describe Xing::RootResourcesController, :type => :controller do
     end
 
     it "should render all routes as json" do
-      Xing::Serializers::RootResources.should_receive(:new).and_return(:serializer)
+      expect(Xing::Serializers::RootResources).to receive(:new).and_return(:serializer)
       get :index
       expect(assigns[:resources][:resources]).to be_a_kind_of(Addressable::Template)
     end

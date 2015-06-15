@@ -2,7 +2,7 @@ require 'xing/mappers/base'
 
 describe Xing::Mappers::Base do
   it "should exist" do
-    Xing::Mappers::Base.should be_a(Module)
+    expect(Xing::Mappers::Base).to be_a(Module)
   end
 
   context "subclasses" do

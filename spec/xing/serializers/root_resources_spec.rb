@@ -13,8 +13,8 @@ describe Xing::Serializers::RootResources do
       Xing::Serializers::RootResources.new(resources).to_json
     end
 
-    it { should be_present}
-    it { should have_json_path('links/page')}
-    it { should have_json_path('links/menus')}
+    it { is_expected.to be_present}
+    it { is_expected.to have_json_path('links/page')}
+    it { is_expected.to have_json_path('links/menus')}
   end
 end
