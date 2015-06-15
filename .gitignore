@@ -13,3 +13,4 @@ tmp/
 .sass-cache/
 spec_help/dummy/log/test.log
 last_run
+coverage/*

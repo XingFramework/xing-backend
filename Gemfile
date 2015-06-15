@@ -21,6 +21,7 @@ group :test do
   gem 'actionpack'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'simplecov'
   gem 'fuubar', "~> 2.0.0.rc1"
 end
 

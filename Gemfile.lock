@@ -232,6 +232,7 @@ DEPENDENCIES
   rspec
   rspec-rails
   sidekiq
+  simplecov
   sqlite3
   typhoeus
   xing-backend!
