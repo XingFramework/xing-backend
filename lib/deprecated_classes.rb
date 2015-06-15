@@ -9,9 +9,9 @@ Xing::DEPRECATED_CLASSES = {
   'ActiveModelErrorConverter' => 'Xing::Services::ErrorConverter',
   'BaseController'            => 'Xing::BaseController',
   'JsonController'            => 'Xing::BaseController',
-  'ResourcesController'       => 'Xing::RootResourcesController'
+  'ResourcesController'       => 'Xing::RootResourcesController',
+  'RemoteSnapshotFetcher'     => 'Xing::Services::SnapshotFetcher'
 }
-
 
 Xing::DEPRECATED_CLASSES.each do |old, new|
 

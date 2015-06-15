@@ -5,6 +5,8 @@ gem 'active_model_serializers'
 gem 'i18n'
 gem 'devise_token_auth', :github => 'lrdesign/devise_token_auth'
 gem 'rails-rfc6570', '~> 0.3'
+gem 'typhoeus'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug'
