@@ -1,4 +1,4 @@
-require 'xing'
+require 'xing-backend'
 
 describe Xing do
   it "should exist" do

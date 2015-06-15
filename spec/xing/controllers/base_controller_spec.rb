@@ -1,4 +1,4 @@
-require 'xing'
+require 'xing-backend'
 
 describe Xing::BaseController, :type => :controller do
   it "should exist" do

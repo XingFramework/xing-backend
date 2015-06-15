@@ -1,4 +1,4 @@
-require 'xing'
+require 'xing-backend'
 require 'active_support/deprecation'
 
 Xing::DEPRECATED_CLASSES = {
