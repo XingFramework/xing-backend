@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
 gemspec :name => "xing-backend" #points to default 'gem.gemspec'
-gem "xing_backend_token_auth", :path => "../xing_backend_token_auth"
 
 gem 'byebug'
 gem 'cadre'
