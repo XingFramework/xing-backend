@@ -96,7 +96,7 @@ Gem::Specification.new do |spec|
     spec_help/dummy/public/favicon.ico
     spec_help/dummy/Rakefile
     spec_help/dummy/README.rdoc
-    spec_help/spec_helper.rb  
+    spec_help/spec_helper.rb
   ]
 
   spec.test_file        = "spec_help/gem_test_suite.rb"
@@ -110,18 +110,12 @@ Gem::Specification.new do |spec|
   spec.rdoc_options	+= %w{--main doc/README }
   spec.rdoc_options	+= ["--title", "#{spec.name}-#{spec.version} Documentation"]
 
-  #spec.add_dependency("", "> 0")
-  spec.add_development_dependency("rspec-rails", "~> 3.2")
-  spec.add_development_dependency("rspec", "~> 3.2")
-  spec.add_development_dependency("json_spec")
-  
 
-  spec.add_runtime_dependency 'rails', "~> 4.2.0"
-  spec.add_runtime_dependency 'active_model_serializers'
-  spec.add_runtime_dependency 'i18n'
-  spec.add_runtime_dependency 'devise_token_auth'
-
-
-  #spec.post_install_message = "Thanks for installing my gem!"
+  spec.add_dependency 'rails', "~> 4.2.0"
+  spec.add_dependency 'active_model_serializers', "~> 0.9.3"
+  spec.add_dependency 'i18n', "~> 0.7"
+  spec.add_dependency 'xing_backend_token_auth', "~> 0.1.31"
+  spec.add_dependency 'rails-rfc6570', '~> 0.3'
+  spec.add_dependency 'typhoeus', "~> 0.7"
+  spec.add_dependency 'sidekiq', "~> 3.3"
 end
-

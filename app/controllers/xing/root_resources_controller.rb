@@ -1,3 +1,5 @@
+require 'rails/rfc6570'
+
 module Xing
   class RootResourcesController < ::Xing::BaseController
     def index
