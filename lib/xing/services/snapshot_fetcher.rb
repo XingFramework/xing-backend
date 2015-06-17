@@ -1,4 +1,5 @@
 require 'typhoeus'
+require 'addressable/uri'
 require 'xing/services/snapshot_writer'
 require 'sidekiq/worker'
 

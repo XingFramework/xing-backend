@@ -1,3 +1,5 @@
+require 'devise_token_auth'
+
 module Xing
   class BaseController < ActionController::Base
     include DeviseTokenAuth::Concerns::SetUserByToken
