@@ -1,6 +1,9 @@
 module Xing
+
   class Engine < ::Rails::Engine
     isolate_namespace Xing
+
+    config.autoload_paths += Dir[File.join(__FILE__, '../controllers/**/')]
 
     config.generators do |g|
       g.test_framework :rspec
@@ -20,6 +23,5 @@ module Xing
         xng_config.backend_subdomain ||= 'api'
       end
     end
-
   end
 end

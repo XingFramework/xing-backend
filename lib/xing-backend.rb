@@ -17,9 +17,18 @@ module Xing
   def self.configure(&block)
     yield self
   end
+
+  module Controllers
+    autoload :Base,                    'xing/controllers/base'
+
+    # NOTE: The rails router expects the the controller to have "Controller" as
+    # the suffix of the name, or it complains.
+    autoload :RootResourcesController, 'xing/controllers/root_resources_controller'
+  end
 end
 
-require 'xing/engine'
 require 'xing/mappers'
+require 'xing/engine'
 require 'xing/serializers'
 require 'xing/services'
+require 'deprecated_classes'
