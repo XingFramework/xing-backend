@@ -225,8 +225,6 @@ DEPENDENCIES
   rspec (~> 3.2)
   rspec-rails
   simplecov
+  simplecov-json
   sqlite3
   xing-backend!
-
-BUNDLED WITH
-   1.10.3

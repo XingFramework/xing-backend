@@ -14,3 +14,4 @@ tmp/
 spec_help/dummy/log/test.log
 last_run
 coverage/*
+corundum/
