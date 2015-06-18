@@ -25,7 +25,8 @@ Gem::Specification.new do |spec|
   # find -E lib bin doc spec spec_help -not -regex '.*\.(sw.|keep)' -type f  2>/dev/null
   spec.files		= %w[
     lib/deprecated_classes.rb
-    lib/old-classes/remote_snapshot_fetcher.rb
+    lib/xing/controllers/base.rb
+    lib/xing/controllers/root_resources_controller.rb
     lib/xing/engine.rb
     lib/xing/mappers/base.rb
     lib/xing/mappers.rb
@@ -34,34 +35,29 @@ Gem::Specification.new do |spec|
     lib/xing/serializers.rb
     lib/xing/services/error_converter.rb
     lib/xing/services/json_tree_lister.rb
+    lib/xing/services/snapshot_fetcher.rb
+    lib/xing/services/snapshot_writer.rb
     lib/xing/services.rb
-    lib/xing.rb
+    lib/xing-backend.rb
     spec/deprecated_classes/active_model_error_converter_spec.rb
-    spec/deprecated_classes/base_controller_spec.rb
     spec/deprecated_classes/base_serializer_spec.rb
     spec/deprecated_classes/hypermedia_json_mapper_spec.rb
-    spec/deprecated_classes/json_controller.rb
     spec/deprecated_classes/json_tree_lister_spec.rb
-    spec/deprecated_classes/resources_controller.rb
+    spec/deprecated_classes/remote_snapshot_fetcher_spec.rb
     spec/deprecated_classes/resources_serializer_spec.rb
+    spec/xing/controllers/base_spec.rb
     spec/xing/controllers/root_resources_controller_spec.rb
-    spec/xing/controllers/xing/base_controller_spec.rb
-    spec/xing/controllers/xing/root_resources_controller.rb
     spec/xing/mappers/base_spec.rb
     spec/xing/serializers/base_spec.rb
     spec/xing/serializers/root_resources_spec.rb
     spec/xing/services/error_converter_spec.rb
     spec/xing/services/json_tree_lister_spec.rb
+    spec/xing/services/snapshot_fetcher_spec.rb
     spec/xing_spec.rb
-    spec_help/dummy/app/assets/images/.keep
     spec_help/dummy/app/assets/javascripts/application.js
     spec_help/dummy/app/assets/stylesheets/application.css
     spec_help/dummy/app/controllers/application_controller.rb
-    spec_help/dummy/app/controllers/concerns/.keep
     spec_help/dummy/app/helpers/application_helper.rb
-    spec_help/dummy/app/mailers/.keep
-    spec_help/dummy/app/models/.keep
-    spec_help/dummy/app/models/concerns/.keep
     spec_help/dummy/app/views/layouts/application.html.erb
     spec_help/dummy/bin/bundle
     spec_help/dummy/bin/rails
@@ -87,8 +83,6 @@ Gem::Specification.new do |spec|
     spec_help/dummy/config/secrets.yml
     spec_help/dummy/config.ru
     spec_help/dummy/db/test.sqlite3
-    spec_help/dummy/lib/assets/.keep
-    spec_help/dummy/log/.keep
     spec_help/dummy/log/test.log
     spec_help/dummy/public/404.html
     spec_help/dummy/public/422.html
@@ -99,7 +93,6 @@ Gem::Specification.new do |spec|
     spec_help/spec_helper.rb
   ]
 
-  spec.test_file        = "spec_help/gem_test_suite.rb"
   spec.licenses = ["MIT"]
   spec.require_paths = %w[lib/]
   spec.rubygems_version = "1.3.5"
