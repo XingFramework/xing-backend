@@ -228,3 +228,6 @@ DEPENDENCIES
   simplecov-json
   sqlite3
   xing-backend!
+
+BUNDLED WITH
+   1.10.3
