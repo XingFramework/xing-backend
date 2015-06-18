@@ -1,7 +1,7 @@
 require 'xing/serializers/base'
 
 module Xing::Serializers
-  class PagedData < Base
+  class PagedList < Base
     def initialize(list, page_num, total_pages, options = {})
       @page_num = page_num.to_i
       @total_pages = total_pages

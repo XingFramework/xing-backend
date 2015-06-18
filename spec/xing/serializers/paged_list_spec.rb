@@ -1,7 +1,7 @@
-require 'xing/serializers/paged_data'
+require 'xing/serializers/paged_list'
 require 'json_spec'
 
-describe Xing::Serializers::PagedData do
+describe Xing::Serializers::PagedList do
   include JsonSpec::Matchers
 
   class ItemSerializer < Xing::Serializers::Base
@@ -11,7 +11,7 @@ describe Xing::Serializers::PagedData do
     end
   end
 
-  class PageSerializer < Xing::Serializers::PagedData
+  class PageSerializer < Xing::Serializers::PagedList
     def item_serializer_class
       ItemSerializer
     end

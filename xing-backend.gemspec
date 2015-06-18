@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.1"
+  spec.version		= "0.0.12"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',
@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
     lib/xing/mappers/base.rb
     lib/xing/mappers.rb
     lib/xing/serializers/base.rb
+    lib/xing/serializers/paged_list.rb
     lib/xing/serializers/root_resources.rb
     lib/xing/serializers.rb
     lib/xing/services/error_converter.rb
@@ -49,6 +50,7 @@ Gem::Specification.new do |spec|
     spec/xing/controllers/root_resources_controller_spec.rb
     spec/xing/mappers/base_spec.rb
     spec/xing/serializers/base_spec.rb
+    spec/xing/serializers/paged_list_spec.rb
     spec/xing/serializers/root_resources_spec.rb
     spec/xing/services/error_converter_spec.rb
     spec/xing/services/json_tree_lister_spec.rb
@@ -104,7 +106,7 @@ Gem::Specification.new do |spec|
   spec.rdoc_options	+= ["--title", "#{spec.name}-#{spec.version} Documentation"]
 
 
-  spec.add_dependency 'rails', "~> 4.2.0"
+  spec.add_dependency 'rails', "~> 4.2.1"
   spec.add_dependency 'active_model_serializers', "~> 0.9.3"
   spec.add_dependency 'i18n', "~> 0.7"
   spec.add_dependency 'xing_backend_token_auth', "~> 0.1.31"
