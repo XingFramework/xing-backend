@@ -2,6 +2,7 @@
 # heavily on rails core extensions, so we are requiring them here.
 require 'active_support'
 require 'active_support/core_ext'
+require 'xing/services/error_converter'
 
 module Xing
   module Mappers
@@ -54,7 +55,7 @@ module Xing
       # component of a page route. We are here abusing recognize_path, which isn't
       # supposed to be used outside of tests (see
       # https://github.com/rails/rails/issues/2656), but we don't know what the
-      # alternative is.
+      # alternative is.e
       def route_to(path)
         path = "http://#{BACKEND_SUBDOMAIN}.example.com#{normalize_path(path)}";
         router.recognize_path(path)
@@ -127,7 +128,7 @@ module Xing
       end
 
       def add_ar_arrors(object)
-        object_errors = ActiveModelErrorConverter.new(object).convert
+        object_errors = Xing::Services::ErrorConverter.new(object).convert
         error_data.deep_merge!(object_errors)
       end
     end
