@@ -1,7 +1,6 @@
 require 'xing/serializers/base'
 require 'json_spec'
 
-
 describe Xing::Serializers::Base do
   include JsonSpec::Matchers
 
