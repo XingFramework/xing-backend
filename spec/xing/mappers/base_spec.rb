@@ -18,7 +18,7 @@ describe Xing::Mappers::Base do
     end
 
     before do
-      stub_const("ActiveModelErrorConverter", double('error converter')).tap do |stub|
+      stub_const("Xing::Services::ErrorConverter", double('error converter')).tap do |stub|
         allow(stub).to receive_message_chain(:new, :convert).and_return({})
       end
     end
