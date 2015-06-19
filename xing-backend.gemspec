@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
     lib/xing/mappers/base.rb
     lib/xing/mappers.rb
     lib/xing/serializers/base.rb
+    lib/xing/serializers/list.rb
     lib/xing/serializers/paged_list.rb
     lib/xing/serializers/root_resources.rb
     lib/xing/serializers.rb
