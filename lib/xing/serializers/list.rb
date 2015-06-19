@@ -4,7 +4,7 @@ module Xing::Serializers
   class List < Base
 
     def item_serializer_class
-      raise NotImplemented,
+      raise NotImplementedError,
         "subclasses of Xing::Serializers::List must override item_serializer_class to refer to the per-item serializer"
     end
 
@@ -13,12 +13,11 @@ module Xing::Serializers
     end
 
     def template_link
-      raise NotImplemented,
-        "subclasses of Xing::Serializers::List must override template_link to provide a template for a single resource in the list"
+      return nil
     end
 
     def self_link
-      raise NotImplemented,
+      raise NotImplementedError,
         "subclasses of Xing::Serializers::List must override self_link to return their own path"
     end
 
@@ -29,10 +28,11 @@ module Xing::Serializers
     end
 
     def links
-      {
-        :self => self_link,
-        :template => template_link
+      links = {
+        :self => self_link
       }
+      links[:template] = template_link unless template_link.nil?
+      return links
     end
   end
 end

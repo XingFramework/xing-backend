@@ -12,7 +12,7 @@ module Xing::Serializers
     attr_reader :page_num, :total_pages
 
     def page_link(options)
-      raise NotImplemented,
+      raise NotImplementedError,
         "subclasses of Xing::Serializers::PagesData must override page_link to return the URL of a page based on a :page => Integer() hash"
     end
 

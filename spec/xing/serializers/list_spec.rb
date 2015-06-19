@@ -11,20 +11,6 @@ describe Xing::Serializers::List do
     end
   end
 
-  class ListSerializer < Xing::Serializers::List
-    def item_serializer_class
-      ItemSerializer
-    end
-
-    def template_link
-      "template_url_for_list"
-    end
-
-    def self_link
-      "url_for_list"
-    end
-  end
-
   let :list do
     (1..3).map do |index|
       double("a mock activemodel").tap do |model|
@@ -44,7 +30,20 @@ describe Xing::Serializers::List do
     serializer.to_json
   end
 
-  describe 'as_json' do
+  describe 'with template link' do
+    class ListSerializer < Xing::Serializers::List
+      def item_serializer_class
+        ItemSerializer
+      end
+
+      def template_link
+        "template_url_for_list"
+      end
+
+      def self_link
+        "url_for_list"
+      end
+    end
 
     it "should have the correct structure" do
       expect(json).to have_json_path('links/self')
@@ -65,6 +64,53 @@ describe Xing::Serializers::List do
       expect(ItemSerializer).to receive(:new).with(list[1], anything)
       expect(ItemSerializer).to receive(:new).with(list[2], anything)
       expect(json).to have_json_size(3).at_path('data')
+    end
+  end
+
+  describe 'without template link' do
+    class ListSerializerWithoutTemplateLink < Xing::Serializers::List
+      def item_serializer_class
+        ItemSerializer
+      end
+
+      def self_link
+        "url_for_list"
+      end
+    end
+
+    let :serializer do
+      ListSerializerWithoutTemplateLink.new(list)
+    end
+
+    it "should have the correct structure" do
+      expect(json).to have_json_path('links/self')
+      expect(json).to_not have_json_path('links/template')
+      expect(json).to have_json_path('data/')
+    end
+
+    it "should generate a JSON with the proper links and self" do
+      expect(json).to be_json_eql('"url_for_list"').at_path('links/self')
+      expect(json).to be_json_eql('"Name 2!"').at_path('data/1/data/name')
+      expect(json).to be_json_eql('2').at_path('data/1/data/position')
+      expect(json).to be_json_eql('"url_for_this_model"').at_path('data/1/links/self')
+    end
+  end
+
+  describe 'a badly formed subclass' do
+    class BrokenListSerializer < Xing::Serializers::List
+      def item_serializer_class
+        ItemSerializer
+      end
+    end
+
+    let :serializer do
+      BrokenListSerializer.new(list)
+    end
+
+    it "should fail" do
+      expect do
+        json
+      end.to raise_error(NotImplementedError)
     end
   end
 end
