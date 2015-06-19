@@ -1,7 +1,7 @@
-require 'xing/serializers/base'
+require 'xing/serializers/list'
 
 module Xing::Serializers
-  class PagedList < Base
+  class PagedList < List
     def initialize(list, page_num, total_pages, options = {})
       @page_num = page_num.to_i
       @total_pages = total_pages
@@ -11,29 +11,9 @@ module Xing::Serializers
 
     attr_reader :page_num, :total_pages
 
-    def item_serializer_class
-      raise NotImplemented,
-        "subclasses of Xing::Serializers::PagesData must override item_serializer_class to refer to the per-item serializer"
-    end
-
-    def item_serializer_options
-      {}
-    end
-
     def page_link(options)
       raise NotImplemented,
         "subclasses of Xing::Serializers::PagesData must override page_link to return the URL of a page based on a :page => Integer() hash"
-    end
-
-    def self_link
-      raise NotImplemented,
-        "subclasses of Xing::Serializers::PagesData must override self_link to return their own path"
-    end
-
-    def as_json_without_wrap(options={})
-      object.map do |item|
-        item_serializer_class.new(item, item_serializer_options).as_json
-      end
     end
 
     def next_link
