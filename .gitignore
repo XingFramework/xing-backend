@@ -16,3 +16,4 @@ last_run
 coverage/*
 corundum/
 pkg
+.idea/
