@@ -137,14 +137,14 @@ module Xing
       end
 
       def build_errors
-        self.add_ar_arrors(self.record)
+        self.add_ar_errors(self.record)
       end
 
       def errors
         wrap_data(error_data)
       end
 
-      def add_ar_arrors(object)
+      def add_ar_errors(object)
         object_errors = Xing::Services::ErrorConverter.new(object).convert
         error_data.deep_merge!(object_errors)
       end
