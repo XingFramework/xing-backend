@@ -25,6 +25,9 @@ Gem::Specification.new do |spec|
   # find -E lib bin doc spec spec_help -not -regex '.*\.(sw.|keep)' -type f  2>/dev/null
   spec.files		= %w[
     lib/deprecated_classes.rb
+    lib/xing/builders/list_difference_builder.rb
+    lib/xing/builders/ordered_list_difference_builder.rb
+    lib/xing/builders.rb
     lib/xing/controllers/base.rb
     lib/xing/controllers/root_resources_controller.rb
     lib/xing/engine.rb
@@ -37,6 +40,7 @@ Gem::Specification.new do |spec|
     lib/xing/serializers.rb
     lib/xing/services/error_converter.rb
     lib/xing/services/json_tree_lister.rb
+    lib/xing/services/locator.rb
     lib/xing/services/snapshot_fetcher.rb
     lib/xing/services/snapshot_writer.rb
     lib/xing/services.rb
@@ -45,8 +49,11 @@ Gem::Specification.new do |spec|
     spec/deprecated_classes/base_serializer_spec.rb
     spec/deprecated_classes/hypermedia_json_mapper_spec.rb
     spec/deprecated_classes/json_tree_lister_spec.rb
+    spec/deprecated_classes/list_difference_builder_spec.com
     spec/deprecated_classes/remote_snapshot_fetcher_spec.rb
     spec/deprecated_classes/resources_serializer_spec.rb
+    spec/xing/builders/list_difference_builder_spec.rb
+    spec/xing/builders/ordered_list_difference_builder_spec.rb
     spec/xing/controllers/base_spec.rb
     spec/xing/controllers/root_resources_controller_spec.rb
     spec/xing/mappers/base_spec.rb
