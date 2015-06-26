@@ -31,6 +31,9 @@ Gem::Specification.new do |spec|
     lib/xing/controllers/base.rb
     lib/xing/controllers/root_resources_controller.rb
     lib/xing/engine.rb
+    lib/xing/builders/list_difference_builder.rb
+    lib/xing/builders/ordered_list_difference_builder.rb
+    lib/xing/builders.rb
     lib/xing/mappers/base.rb
     lib/xing/mappers.rb
     lib/xing/serializers/base.rb
@@ -43,6 +46,7 @@ Gem::Specification.new do |spec|
     lib/xing/services/locator.rb
     lib/xing/services/snapshot_fetcher.rb
     lib/xing/services/snapshot_writer.rb
+    lib/xing/services/locator.rb
     lib/xing/services.rb
     lib/xing-backend.rb
     spec/deprecated_classes/active_model_error_converter_spec.rb
