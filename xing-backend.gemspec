@@ -85,8 +85,6 @@ Gem::Specification.new do |spec|
     spec_help/dummy/config/routes.rb
     spec_help/dummy/config/secrets.yml
     spec_help/dummy/config.ru
-    spec_help/dummy/db/test.sqlite3
-    spec_help/dummy/log/test.log
     spec_help/dummy/public/404.html
     spec_help/dummy/public/422.html
     spec_help/dummy/public/500.html
