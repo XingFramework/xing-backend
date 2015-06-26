@@ -3,6 +3,7 @@
 require 'active_support'
 require 'active_support/core_ext'
 require 'xing/services/error_converter'
+require 'xing/services/locator'
 
 module Xing
   module Mappers
@@ -17,6 +18,7 @@ module Xing
       #    assign_values  -- move values from JSON into the mapped AR record
       #
       # Subclasses may also want to define:
+      #    locator_attribute_name -- if the locator something other than :id, like :url_slug
       #    find_existing_record -- for locating the underlying AR record
       #    build_new_record     -- for for instantiating a new underlying AR record
       #    map_nested_models
@@ -34,8 +36,13 @@ module Xing
         end
         @locator = locator
       end
-      attr_accessor :locator, :error_data
+      attr_accessor :locator, :locator_attribute_name, :error_data
       attr_writer :record
+      attr_reader :links
+
+      def locator_attribute_name
+       :id
+      end
 
       def router
         Rails.application.routes
@@ -65,6 +72,7 @@ module Xing
       def save
         perform_mapping
         unless self.errors[:data].present?
+          save_nested_models
           self.record.save
         end
       end
@@ -83,6 +91,7 @@ module Xing
 
       def perform_mapping
         data = unwrap_data(@source_hash)
+        @links = unwrap_links(@source_hash)
         self.error_data = Hash.new { |hash, key| hash[key] = {} }
 
         assign_values(data)
@@ -90,7 +99,12 @@ module Xing
         build_errors
       end
 
+      def unwrap_links(hash)
+        hash['links'].with_indifferent_access
+      end
+
       def unwrap_data(hash)
+        return hash['data'] if hash['data'].is_a?(Array)
         hash['data'].with_indifferent_access
       end
 
@@ -119,15 +133,18 @@ module Xing
       def map_nested_models
       end
 
+      def save_nested_models
+      end
+
       def build_errors
-        self.add_ar_arrors(self.record)
+        self.add_ar_errors(self.record)
       end
 
       def errors
         wrap_data(error_data)
       end
 
-      def add_ar_arrors(object)
+      def add_ar_errors(object)
         object_errors = Xing::Services::ErrorConverter.new(object).convert
         error_data.deep_merge!(object_errors)
       end
