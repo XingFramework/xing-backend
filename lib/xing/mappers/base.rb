@@ -8,6 +8,7 @@ require 'xing/services/locator'
 module Xing
   module Mappers
     class Base
+      include Services::Locator
       class MissingLinkException < Exception; end
 
       # Subclasses must define:
@@ -40,32 +41,8 @@ module Xing
       attr_writer :record
       attr_reader :links
 
-      def locator_attribute_name
+      def self.locator_attribute_name
        :id
-      end
-
-      def router
-        Rails.application.routes
-      end
-
-      def normalize_path(path)
-        path = "/#{path}"
-        path.squeeze!('/')
-        path.sub!(%r{/+\Z}, '')
-        path.gsub!(/(%[a-f0-9]{2})/) { $1.upcase }
-        path = '/' if path == ''
-        path
-      end
-
-      # This helper is used to deconstruct a URL for the purpose of extracting
-      # components.  For example, menu_item_mapper uses it to extract the url_slug
-      # component of a page route. We are here abusing recognize_path, which isn't
-      # supposed to be used outside of tests (see
-      # https://github.com/rails/rails/issues/2656), but we don't know what the
-      # alternative is.e
-      def route_to(path)
-        path = "http://#{BACKEND_SUBDOMAIN}.example.com#{normalize_path(path)}";
-        router.recognize_path(path)
       end
 
       # Default save - subclasses might override
@@ -100,7 +77,7 @@ module Xing
       end
 
       def unwrap_links(hash)
-        hash['links'].with_indifferent_access
+        hash['links'].with_indifferent_access if hash['links']
       end
 
       def unwrap_data(hash)
