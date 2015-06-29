@@ -3,6 +3,7 @@ require 'xing/services/locator'
 module Xing
   module Builders
     class ListDifferenceBuilder
+      include Services::Locator
 
       # list_data is is an array of JSON objects passed in by the mapper (the new list of records)
       # collection is the ActiveRecord collection of existing records (i.e. person.pets, rainbow.colors, book.chapters)
