@@ -39,7 +39,7 @@ module Xing
       end
 
       def locator_for(data)
-       Xing::Services::Locator.route_to(data[:links][:self])[:id].to_i
+       route_to(data[:links][:self])[:id].to_i
       end
 
       def map_items
