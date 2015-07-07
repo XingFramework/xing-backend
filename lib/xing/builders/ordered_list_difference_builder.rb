@@ -8,11 +8,10 @@ module Xing
           mapper = @mapper_class.new(item[:incoming], item[:locator])
 
           # Sets association, attributes and position
-          @collection << mapper.record
           mapper.perform_mapping
           set_position(mapper.record, index)
 
-          @new_list << mapper
+          @new_list << mapper.record
           @errors[index] = mapper.errors[:data] unless mapper.errors[:data].blank?
         end
       end

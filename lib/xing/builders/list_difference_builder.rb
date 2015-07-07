@@ -6,10 +6,8 @@ module Xing
       include Services::Locator
 
       # list_data is is an array of JSON objects passed in by the mapper (the new list of records)
-      # collection is the ActiveRecord collection of existing records (i.e. person.pets, rainbow.colors, book.chapters)
-      def initialize(list_data, collection, mapper_class)
+      def initialize(list_data, mapper_class)
         @list_data = list_data
-        @collection = collection
         @mapper_class = mapper_class
 
         @errors = Hash.new { |hash, key| hash[key] = {} }
@@ -21,17 +19,13 @@ module Xing
         sort_json_items
         map_items
 
-        { save: @new_list, delete: @delete_ids }
+        @new_list
       end
 
       def sort_json_items
-        @existing_ids = @collection.map{|item| item.send(@mapper_class.locator_attribute_name)}
-
         @list_data = @list_data.map do |data|
           { :locator => set_locator(data), :incoming => data}
         end
-
-        @delete_ids = @existing_ids - @list_data.map { |item| item[:locator] }
       end
 
       def set_locator(data)
@@ -39,7 +33,7 @@ module Xing
       end
 
       def locator_for(data)
-       route_to(data[:links][:self])[:id].to_i
+        route_to(data[:links][:self])[:id].to_i
       end
 
       def map_items
@@ -49,10 +43,9 @@ module Xing
           mapper = @mapper_class.new(item[:incoming], item[:locator])
 
           # Sets association, attributes
-          @collection << mapper.record
           mapper.perform_mapping
 
-          @new_list << mapper
+          @new_list << mapper.record
           @errors[index] = mapper.errors[:data] unless mapper.errors[:data].blank?
         end
       end

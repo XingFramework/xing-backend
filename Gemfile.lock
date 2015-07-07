@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    xing-backend (0.0.16)
+    xing-backend (0.0.17)
       active_model_serializers (~> 0.9.3)
       i18n (~> 0.7)
       rails (~> 4.2.1)

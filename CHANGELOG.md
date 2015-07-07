@@ -1,3 +1,9 @@
+0.0.17 / 2015-07-07
+========
+  * Refactor ListDifferenceBuilder
+  * Breaking change, LDB now takes 2 arguments instead of 3 and the output of the #build method is an array of AR objects rather than a hash.
+  * Add CHANGELOG.md
+
 0.0.16 / 2015-06-29
 ========
   * Fix bug with ListDifferenceBuilder route_to method
