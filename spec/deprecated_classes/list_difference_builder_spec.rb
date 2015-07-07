@@ -14,6 +14,6 @@ describe ListDifferenceBuilder, :type => :deprecation do
   end
 
   it "should be the correct class" do
-    expect(ListDifferenceBuilder.new(list_data, collection, mapper)).to be_a(Xing::Builders::OrderedListDifferenceBuilder)
+    expect(ListDifferenceBuilder.new(list_data, mapper)).to be_a(Xing::Builders::OrderedListDifferenceBuilder)
   end
 end

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Xing::Builders::OrderedListDifferenceBuilder do
 
   let :builder do
-    Xing::Builders::OrderedListDifferenceBuilder.new(list_data, collection, mapper_class)
+    Xing::Builders::OrderedListDifferenceBuilder.new(list_data, mapper_class)
   end
 
   let :mapper_class do
@@ -14,20 +14,12 @@ describe Xing::Builders::OrderedListDifferenceBuilder do
     double("mapper")
   end
 
-  let :collection do
-    [double("Relation AR Object id: 1"), double("Relation AR Object id: 2"), double("Relation AR Object id: 3")]
-  end
-
   let :new_ar_object do
     double("New Relation AR Object")
   end
 
   let :updated_ar_object do
     double("Updated AR Object")
-  end
-
-  let :existing_ids do
-    [1,2,3]
   end
 
   let :list_data do
@@ -78,30 +70,14 @@ describe Xing::Builders::OrderedListDifferenceBuilder do
     ]
   end
 
-  it "should initialize and assign list_data, collection, mapper class and errors" do
-    expect(builder.instance_variable_get('@list_data')).to eq(list_data)
-    expect(builder.instance_variable_get('@collection')).to eq(collection)
-    expect(builder.instance_variable_get('@mapper_class')).to eq(mapper_class)
-    expect(builder.instance_variable_get('@errors')).to eq({})
-  end
-
   describe "#sort_json_items" do
     before :each do
-      allow(collection).to receive(:map).and_return(existing_ids)
       allow(builder).to receive(:locator_for).and_return(1)
       builder.sort_json_items
     end
 
-    it "should create a list of existing ids" do
-      expect(builder.instance_variable_get('@existing_ids')).to eq(existing_ids)
-    end
-
     it "should insert index and locator into the item data" do
       expect(builder.instance_variable_get('@list_data')).to eq(new_list_data)
-    end
-
-    it "should find the ids to delete" do
-      expect(builder.instance_variable_get('@delete_ids')).to eq([2,3])
     end
   end
 
@@ -140,7 +116,7 @@ describe Xing::Builders::OrderedListDifferenceBuilder do
         allow(mapper_instance).to receive(:errors).and_return({})
         builder.map_items
 
-        expect(builder.instance_variable_get('@new_list')).to match_array([mapper_instance, mapper_instance])
+        expect(builder.instance_variable_get('@new_list')).to match_array([new_ar_object, updated_ar_object])
       end
     end
 
@@ -173,7 +149,6 @@ describe Xing::Builders::OrderedListDifferenceBuilder do
 
   describe "#build" do
     before :each do
-      allow(collection).to receive(:map).and_return(existing_ids)
       allow(builder).to receive(:locator_for).and_return(1)
       allow(mapper_class).to receive(:new).and_return(mapper_instance)
       allow(mapper_instance).to receive(:record).and_return(new_ar_object, new_ar_object, updated_ar_object, updated_ar_object)
@@ -188,11 +163,7 @@ describe Xing::Builders::OrderedListDifferenceBuilder do
       end
 
       it "should return a hash with save keys" do
-        expect(builder.build[:save]).to match_array([mapper_instance, mapper_instance])
-      end
-
-      it "should return a hash with delete keys" do
-        expect(builder.build[:delete]).to match_array([2,3])
+        expect(builder.build).to match_array([new_ar_object, updated_ar_object])
       end
     end
 
