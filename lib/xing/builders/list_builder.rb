@@ -2,7 +2,7 @@ require 'xing/services/locator'
 
 module Xing
   module Builders
-    class ListDifferenceBuilder
+    class ListBuilder
       include Services::Locator
 
       # list_data is is an array of JSON objects passed in by the mapper (the new list of records)
@@ -15,32 +15,15 @@ module Xing
 
       attr_reader :errors
 
-      def build
-        sort_json_items
-        map_items
-
-        @new_list
-      end
-
-      def sort_json_items
-        @list_data = @list_data.map do |data|
-          { :locator => set_locator(data), :incoming => data}
-        end
-      end
-
-      def set_locator(data)
-        locator_for(data) unless (data[:links] || {})[:self].blank?
-      end
-
       def locator_for(data)
-        route_to(data[:links][:self])[:id].to_i
+        route_to(data[:links][:self])[:id].to_i unless (data[:links] || {})[:self].blank?
       end
 
-      def map_items
+      def build
         @new_list = []
-        @list_data.each_with_index do |item, index|
+        @list_data.each_with_index do |data, index|
 
-          mapper = @mapper_class.new(item[:incoming], item[:locator])
+          mapper = @mapper_class.new(data, locator_for(data))
 
           mapper.perform_mapping
           set_position(mapper.record, index)
@@ -48,10 +31,11 @@ module Xing
           @new_list << mapper.record
           @errors[index] = mapper.errors[:data] unless mapper.errors[:data].blank?
         end
+        @new_list
       end
 
       def set_position(record, index)
-        # position is not set in list difference builder
+        # position is not set in list builder
       end
     end
   end

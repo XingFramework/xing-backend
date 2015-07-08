@@ -8,8 +8,7 @@ module Xing
     :ResourcesSerializer       => Xing::Serializers::RootResources,
     :JsonTreeLister            => Xing::Services::JsonTreeLister,
     :ActiveModelErrorConverter => Xing::Services::ErrorConverter,
-    :RemoteSnapshotFetcher     => Xing::Services::SnapshotFetcher,
-    :ListDifferenceBuilder     => Xing::Builders::OrderedListDifferenceBuilder
+    :RemoteSnapshotFetcher     => Xing::Services::SnapshotFetcher
   }
 end
 
