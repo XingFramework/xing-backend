@@ -1,8 +1,10 @@
 0.0.17 / 2015-07-07
 ========
-  * Refactor ListDifferenceBuilder
+  * Refactor ListDifferenceBuilder/OrderedListDifferenceBuilder to ListBuilder/OrderedListBuilder
+  * Name change from ListDifferenceBuilder to ListBuilder
   * Breaking change, LDB now takes 2 arguments instead of 3 and the output of the #build method is an array of AR objects rather than a hash.
-  * Add CHANGELOG.md
+  * Remove deprecation on ListDifferenceBuilder
+  * Add to CHANGELOG.md
 
 0.0.16 / 2015-06-29
 ========
