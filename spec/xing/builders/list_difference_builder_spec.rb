@@ -105,7 +105,7 @@ describe Xing::Builders::ListDifferenceBuilder do
     before :each do
       builder.instance_variable_set('@list_data', new_list_data)
       allow(mapper_class).to receive(:new).and_return(mapper_instance)
-      allow(mapper_instance).to receive(:record).and_return(new_ar_object, updated_ar_object)
+      allow(mapper_instance).to receive(:record).and_return(new_ar_object, new_ar_object, updated_ar_object, updated_ar_object)
       allow(mapper_instance).to receive(:perform_mapping)
       allow(new_ar_object).to receive(:has_attribute?).with(:position).and_return(false)
       allow(updated_ar_object).to receive(:has_attribute?).with(:position).and_return(false)
@@ -134,7 +134,7 @@ describe Xing::Builders::ListDifferenceBuilder do
     before :each do
       allow(builder).to receive(:locator_for).and_return(1)
       allow(mapper_class).to receive(:new).and_return(mapper_instance)
-      allow(mapper_instance).to receive(:record).and_return(new_ar_object, updated_ar_object)
+      allow(mapper_instance).to receive(:record).and_return(new_ar_object, new_ar_object, updated_ar_object, updated_ar_object)
       allow(mapper_instance).to receive(:perform_mapping)
       allow(new_ar_object).to receive(:has_attribute?).with(:position).and_return(false)
       allow(updated_ar_object).to receive(:has_attribute?).with(:position).and_return(false)
