@@ -18,5 +18,3 @@ corundum/
 pkg
 .idea/
 vendor/
-.bundle/
-vendor
