@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.17"
+  spec.version		= "0.0.18"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',
@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
   # On OSX:
   # find -E lib bin doc spec spec_help -not -regex '.*\.(sw.|keep)' -type f  2>/dev/null
   spec.files		= %w[
-    lib/deprecated_classes.rb
     lib/xing/builders/list_builder.rb
     lib/xing/builders/ordered_list_builder.rb
     lib/xing/builders.rb
@@ -49,12 +48,6 @@ Gem::Specification.new do |spec|
     lib/xing/services/locator.rb
     lib/xing/services.rb
     lib/xing-backend.rb
-    spec/deprecated_classes/active_model_error_converter_spec.rb
-    spec/deprecated_classes/base_serializer_spec.rb
-    spec/deprecated_classes/hypermedia_json_mapper_spec.rb
-    spec/deprecated_classes/json_tree_lister_spec.rb
-    spec/deprecated_classes/remote_snapshot_fetcher_spec.rb
-    spec/deprecated_classes/resources_serializer_spec.rb
     spec/xing/builders/list_builder_spec.rb
     spec/xing/builders/ordered_list_builder_spec.rb
     spec/xing/controllers/base_spec.rb

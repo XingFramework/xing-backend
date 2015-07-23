@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gemspec :name => "xing-backend" #points to default 'gem.gemspec'
+gemspec :name => "xing-backend"
 
 gem 'byebug'
 gem 'cadre'

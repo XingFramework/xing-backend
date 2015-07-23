@@ -21,7 +21,7 @@ module Corundum
     end
     rspec = RSpec.new(core)
     cov = SimpleCov.new(core, rspec) do |cov|
-      cov.threshold = 85
+      cov.threshold = 87
     end
 
     gem = GemBuilding.new(core)
