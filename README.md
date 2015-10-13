@@ -54,9 +54,10 @@ Authors
 -------
 
 * Evan Dorn
-* Hannah Howard
-* Judson Lester
 * Patricia Ho
+* Judson Lester
+* Hannah Howard
+* Brooke Fox
 
 Version
 -------
