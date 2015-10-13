@@ -1,4 +1,10 @@
+UNRELEASED CHANGES
+=======
+  * Update all gems, including Rails to 4.2.4
+  * Move to XingFramework Github Repo
+
 0.0.18 / 2015-07-23
+=======
   * Now that xing-backend is up to date everywhere, removing deprecated classes
 
 0.0.17 / 2015-07-07

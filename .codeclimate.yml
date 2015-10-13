@@ -1,8 +1,15 @@
-# Save as .codeclimate.yml (note leading .) in project root directory
-languages:
-  Ruby: true
-  JavaScript: false
-  PHP: false
-  Python: false
+---
+engines:
+  rubocop:
+    enabled: true
+  csslint:
+    enabled: true
+  bundler-audit:
+    enabled: true
+ratings:
+  paths:
+  - "**.rb"
+  - "**.css"
+  - Gemfile.lock
 exclude_paths:
-- "spec_help/dummy/"
+- spec_help/dummy/**/*
