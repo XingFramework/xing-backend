@@ -12,10 +12,10 @@ have been pre-solved in Xing.
 This gem is a Rails Engine that implements the extensions necessary for Rails
 to function as a Xing back-end API server.
 
-[![Code Climate](https://codeclimate.com/github/LRDesign/xing-backend/badges/gpa.svg)](https://codeclimate.com/github/LRDesign/xing-backend)
-[![Test Coverage](https://codeclimate.com/github/LRDesign/xing-backend/badges/coverage.svg)](https://codeclimate.com/github/LRDesign/xing-backend/coverage)
-[![Build Status](https://travis-ci.org/LRDesign/xing-backend.svg?branch=master)](https://travis-ci.org/LRDesign/xing-backend)
-[![Dependency Status](https://gemnasium.com/LRDesign/xing-backend.svg)](https://gemnasium.com/LRDesign/xing-backend)
+[![Code Climate](https://codeclimate.com/github/XingFramework/xing-backend/badges/gpa.svg)](https://codeclimate.com/github/XingFramework/xing-backend)
+[![Test Coverage](https://codeclimate.com/github/XingFramework/xing-backend/badges/coverage.svg)](https://codeclimate.com/github/XingFramework/xing-backend/coverage)
+[![Build Status](https://travis-ci.org/XingFramework/xing-backend.svg?branch=master)](https://travis-ci.org/XingFramework/xing-backend)
+[![Dependency Status](https://gemnasium.com/XingFramework/xing-backend.svg)](https://gemnasium.com/XingFramework/xing-backend)
 
 
 Serializers
