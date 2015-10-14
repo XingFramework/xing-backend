@@ -14,4 +14,4 @@ gem 'simplecov'
 gem 'simplecov-json'
 gem 'fuubar', "~> 2.0.0.rc1"
 
-gem 'codeclimate-test-reporter', group:test, require: nil
+gem 'codeclimate-test-reporter', group: :test, require: nil
