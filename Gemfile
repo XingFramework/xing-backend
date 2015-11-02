@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gemspec :name => "xing-backend"
 
+gem 'rails', "~> 4.2.4"
+
 gem 'byebug'
 gem 'cadre'
 gem 'corundum'
