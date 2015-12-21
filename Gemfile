@@ -13,5 +13,6 @@ gem 'rspec-rails'
 gem 'simplecov'
 gem 'simplecov-json'
 gem 'fuubar', "~> 2.0.0.rc1"
+gem 'kaminari'
 
 gem 'codeclimate-test-reporter', group: :test, require: nil

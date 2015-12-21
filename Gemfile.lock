@@ -113,6 +113,9 @@ GEM
     json_spec (1.1.4)
       multi_json (~> 1.0)
       rspec (>= 2.0, < 4.0)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -237,6 +240,7 @@ DEPENDENCIES
   corundum
   fuubar (~> 2.0.0.rc1)
   json_spec
+  kaminari
   rspec (~> 3.2)
   rspec-rails
   simplecov

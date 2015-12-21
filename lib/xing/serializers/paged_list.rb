@@ -1,19 +1,19 @@
 require 'xing/serializers/list'
+require 'xing/serializers/paged'
 
 module Xing::Serializers
+
+  # Serializes a single page of a long paginated list. We assume the interface
+  # provided by Kaminari: the object to be serialized needs to respond to:
+  #
+  #   current_page, limit_value, total_pages, total_count, each(and various
+  #   Enumerable methods)
+
   class PagedList < List
-    def initialize(list, page_num, total_pages, options = {})
-      @page_num = page_num.to_i
-      @total_pages = total_pages
+    include Paged
 
-      super(list, options)
-    end
-
-    attr_reader :page_num, :total_pages
-
-    def page_link(options)
-      raise NotImplementedError,
-        "subclasses of Xing::Serializers::PagesData must override page_link to return the URL of a page based on a :page => Integer() hash"
+    def page_num
+      object.current_page
     end
 
     def next_link
@@ -25,11 +25,10 @@ module Xing::Serializers
     end
 
     def links
-      {
-        :self => self_link,
-        :next => next_link,
-        :previous => previous_link
-      }
+      super.merge(
+                  :next => next_link,
+                  :previous => previous_link
+                 )
     end
   end
 end
