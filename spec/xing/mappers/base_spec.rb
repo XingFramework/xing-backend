@@ -32,7 +32,7 @@ describe Xing::Mappers::Base do
 
       expect do
         mapper.save
-      end.to raise_error
+      end.to raise_error(NameError, /update_record/)
     end
 
     it "shouldn't error if it does have an update_record and a record_class method" do

@@ -26,4 +26,6 @@ RSpec.configure do |config|
   config.around(:type => :deprecation) do |example|
     ActiveSupport::Deprecation.silence(&example)
   end
+
+  config.include JsonSpec::Helpers
 end

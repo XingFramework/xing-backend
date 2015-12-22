@@ -18,3 +18,4 @@ corundum/
 pkg
 .idea/
 vendor/
+errors.err

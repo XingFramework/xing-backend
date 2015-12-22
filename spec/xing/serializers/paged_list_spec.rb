@@ -1,9 +1,6 @@
 require 'xing/serializers/paged_list'
-require 'json_spec'
 
 describe Xing::Serializers::PagedList do
-  include JsonSpec::Matchers
-
   class ItemSerializer < Xing::Serializers::Base
     attributes :name, :position
     def links
@@ -16,10 +13,8 @@ describe Xing::Serializers::PagedList do
       ItemSerializer
     end
 
-    # Structures a testable "link" text
-    def page_link(options)
-      page_num = options.delete(:page)
-      "page_link:#{page_num}-#{options.keys.join(",")}"
+    def template_link
+      Addressable::Template.new("/page{/page}")
     end
 
     def self_link
@@ -27,8 +22,12 @@ describe Xing::Serializers::PagedList do
     end
   end
 
+  let :per_page do
+    3
+  end
+
   let :list do
-    (1..3).map do |index|
+    (1..per_page).map do |index|
       double("a mock activemodel").tap do |model|
         allow(model).to receive(:read_attribute_for_serialization).with(:name).and_return("Name #{index}!")
         allow(model).to receive(:read_attribute_for_serialization).with(:position).and_return(index)
@@ -38,8 +37,12 @@ describe Xing::Serializers::PagedList do
 
   let :total_pages do 3 end
 
+  let :total_items do
+    total_pages * per_page - 1
+  end
+
   let :serializer do
-    PageSerializer.new(list, page_num, total_pages)
+    PageSerializer.new(Xing::Services::PageWrapper.new(list, page_num, total_items, per_page))
   end
 
   let :json do
@@ -57,11 +60,49 @@ describe Xing::Serializers::PagedList do
     end
 
     it "should generate a JSON with the proper links and self" do
-      expect(json).to be_json_eql('"url_for_this_page"').at_path('links/self')
-      expect(json).to be_json_eql('"page_link:2-"').at_path('links/next')
-      expect(json).to be_json_eql('"Name 2!"').at_path('data/1/data/name')
-      expect(json).to be_json_eql('2').at_path('data/1/data/position')
-      expect(json).to be_json_eql('"url_for_this_model"').at_path('data/1/links/self')
+      expect(parse_json(json, "links/self")).to eq("url_for_this_page")
+      expect(parse_json(json, "links/next")).to eq("/page/2")
+      expect(parse_json(json, "links/first")).to eq("/page/1")
+      expect(parse_json(json, "links/last")).to eq("/page/3")
+      expect(parse_json(json, "data/1/data/name")).to eq("Name 2!")
+      expect(parse_json(json, "data/1/data/position")).to eq(2)
+      expect(parse_json(json, "data/1/links/self")).to eq("url_for_this_model")
+    end
+
+    it "should call the video response serializer" do
+      expect(ItemSerializer).to receive(:new).with(list[0], anything)
+      expect(ItemSerializer).to receive(:new).with(list[1], anything)
+      expect(ItemSerializer).to receive(:new).with(list[2], anything)
+      expect(json).to have_json_size(3).at_path('data')
+    end
+  end
+
+  describe 'using Kaminara' do
+    let :kaminari_list do
+      Kaminari.paginate_array(list * 3).page(1).per(per_page)
+    end
+
+    let :serializer do
+      PageSerializer.new(kaminari_list)
+    end
+
+    let :page_num do 1 end
+
+    it "should have the correct structure" do
+      expect(json).to have_json_path('links/self')
+      expect(json).to have_json_path('links/next')
+      expect(json).to have_json_path('links/previous')
+      expect(json).to have_json_path('data/')
+    end
+
+    it "should generate a JSON with the proper links and self" do
+      expect(parse_json(json, "links/self")).to eq("url_for_this_page")
+      expect(parse_json(json, "links/next")).to eq("/page/2")
+      expect(parse_json(json, "links/first")).to eq("/page/1")
+      expect(parse_json(json, "links/last")).to eq("/page/3")
+      expect(parse_json(json, "data/1/data/name")).to eq("Name 2!")
+      expect(parse_json(json, "data/1/data/position")).to eq(2)
+      expect(parse_json(json, "data/1/links/self")).to eq("url_for_this_model")
     end
 
     it "should call the video response serializer" do
