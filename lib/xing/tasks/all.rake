@@ -1,0 +1,5 @@
+rake_require 'xing/tasks/db_recycle'
+rake_require 'xing/tasks/dependencies_common'
+rake_require 'xing/tasks/generate_dummy_api'
+rake_require 'xing/tasks/sample_data'
+rake_require 'xing/tasks/take_snapshot'

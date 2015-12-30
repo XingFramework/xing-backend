@@ -115,4 +115,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails-rfc6570', '~> 0.3'
   spec.add_dependency 'typhoeus', "~> 0.7"
   spec.add_dependency 'sidekiq', "~> 3.3"
+  spec.add_dependency 'hash_validator', "~> 0.4"
 end
