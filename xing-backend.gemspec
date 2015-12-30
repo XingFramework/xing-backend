@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.18"
+  spec.version		= "0.0.19"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',
@@ -108,12 +108,16 @@ Gem::Specification.new do |spec|
   spec.rdoc_options	+= ["--title", "#{spec.name}-#{spec.version} Documentation"]
 
 
-  spec.add_dependency 'rails', "~> 4.2.1"
-  spec.add_dependency 'active_model_serializers', "~> 0.9.3"
+  spec.add_dependency 'rails', "~> 4.2"
+  spec.add_dependency 'active_model_serializers', "~> 0.9", ">= 0.9.3"
   spec.add_dependency 'i18n', "~> 0.7"
-  spec.add_dependency 'xing_backend_token_auth', "~> 0.1.31"
+  spec.add_dependency 'xing_backend_token_auth', "~> 0.1", ">= 0.1.31"
   spec.add_dependency 'rails-rfc6570', '~> 0.3'
   spec.add_dependency 'typhoeus', "~> 0.7"
   spec.add_dependency 'sidekiq', "~> 3.3"
   spec.add_dependency 'hash_validator', "~> 0.4"
+  spec.add_dependency 'builder', "~> 3.1"
+  spec.add_dependency 'json_spec', "~> 1.1"
+
+
 end
