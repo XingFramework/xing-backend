@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Xing::Builders::OrderedListBuilder do
 
   let :builder do

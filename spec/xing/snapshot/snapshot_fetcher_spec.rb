@@ -1,8 +1,10 @@
-require 'xing/services/snapshot_fetcher'
-require 'typhoeus'
+require 'xing/snapshot/fetcher'
+require 'file-sandbox'
 
 
-describe Xing::Services::SnapshotFetcher do
+describe Xing::Snapshot::Fetcher do
+  include FileSandbox
+
   let :server_secrets do
     { 'url' => 'http://snapshot-server.com',
       'user' => 'foobar',
@@ -13,7 +15,7 @@ describe Xing::Services::SnapshotFetcher do
   let :mock_request  do  double('request') end
   let :mock_response do  double('a response') end
   let :fetcher       do
-    Xing::Services::SnapshotFetcher.new
+    Xing::Snapshot::Fetcher.new
   end
 
   before do

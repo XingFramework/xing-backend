@@ -42,7 +42,7 @@ describe Xing::Serializers::PagedList do
   end
 
   let :serializer do
-    PageSerializer.new(Xing::Services::PageWrapper.new(list, page_num, total_items, per_page))
+    PageSerializer.new(Xing::Services::PagedWrapper.new(list, page_num, total_items, per_page))
   end
 
   let :json do

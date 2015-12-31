@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'xing/nominal/secrets_validator'
 
 describe Xing::Nominal::SecretsValidator do

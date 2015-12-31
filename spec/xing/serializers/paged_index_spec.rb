@@ -1,5 +1,5 @@
 require 'xing/serializers/paged_index'
-require 'xing/services/page_wrapper'
+require 'xing/services/paged_wrapper'
 
 describe Xing::Serializers::PagedIndex do
   class PageIndexSerializer < Xing::Serializers::PagedIndex
@@ -39,7 +39,7 @@ describe Xing::Serializers::PagedIndex do
 
   describe 'as_json' do
     let :serializer do
-      PageIndexSerializer.new(Xing::Services::PageWrapper.new(list, page_num, total_items, per_page))
+      PageIndexSerializer.new(Xing::Services::PagedWrapper.new(list, page_num, total_items, per_page))
     end
 
     it "should generate a JSON with the proper links and self" do

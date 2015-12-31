@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'xing/nominal/database_config_validator'
 
 describe Xing::Nominal::DatabaseConfigValidator do

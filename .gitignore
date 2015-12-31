@@ -19,3 +19,4 @@ pkg
 .idea/
 vendor/
 errors.err
+.cadre/
