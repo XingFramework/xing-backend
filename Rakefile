@@ -4,7 +4,9 @@ require 'corundum/tasklibs'
 module Corundum
   Corundum::register_project(__FILE__)
 
-  core = Core.new
+  core = Core.new do |core|
+    core.file_patterns.code << %r{^config/}
+  end
 
   core.in_namespace do
     GemspecFiles.new(core)
@@ -20,13 +22,13 @@ module Corundum
       end
     end
     rspec = RSpec.new(core)
-    cov = SimpleCov.new(core, rspec) do |cov|
-      cov.threshold = 87
+    SimpleCov.new(core, rspec) do |cov|
+      cov.threshold = 72
     end
 
     gem = GemBuilding.new(core)
-    cutter = GemCutter.new(core,gem)
-    vc = Git.new(core) do |vc|
+    GemCutter.new(core,gem)
+    Git.new(core) do |vc|
       vc.branch = "master"
     end
   end

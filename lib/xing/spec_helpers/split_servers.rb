@@ -1,3 +1,4 @@
+begin
 require 'static-app'
 
 Capybara.configure do |capy|
@@ -9,4 +10,6 @@ Capybara.configure do |capy|
   RSpec.configure do |config|
     config.waterpig_clearable_logs << 'test_static'
   end
+end
+rescue LoadError
 end

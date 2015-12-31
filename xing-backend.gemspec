@@ -24,6 +24,8 @@ Gem::Specification.new do |spec|
   # On OSX:
   # find -E lib bin doc spec spec_help -not -regex '.*\.(sw.|keep)' -type f  2>/dev/null
   spec.files		= %w[
+    config/routes.rb
+    config/locales/json.yml
     lib/xing/spec_helpers/dom_equiv.rb
     lib/xing/spec_helpers/routing_spec_patch.rb
     lib/xing/spec_helpers/split_servers.rb
@@ -151,11 +153,14 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'i18n', "~> 0.7"
   spec.add_dependency 'xing_backend_token_auth', "~> 0.1", ">= 0.1.31"
   spec.add_dependency 'rails-rfc6570', '~> 0.3'
-  spec.add_dependency 'typhoeus', "~> 0.7"
-  spec.add_dependency 'sidekiq', "~> 3.3"
-  spec.add_dependency 'hash_validator', "~> 0.4"
-  spec.add_dependency 'builder', "~> 3.1"
   spec.add_dependency 'json_spec', "~> 1.1"
+  spec.add_dependency 'hash_validator', "~> 0.4"
+  spec.add_dependency 'sidekiq', "~> 3.3"
+
+  # Snapshot reqs
+  spec.add_dependency 'builder', "~> 3.1"
+  spec.add_dependency 'typhoeus', "~> 0.7"
+  spec.add_dependency 'selenium-webdriver'
 
 
 end
