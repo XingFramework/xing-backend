@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.18"
+  spec.version		= "0.0.19"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',
@@ -38,9 +38,12 @@ Gem::Specification.new do |spec|
     lib/xing/serializers/base.rb
     lib/xing/serializers/list.rb
     lib/xing/serializers/paged_list.rb
+    lib/xing/serializers/paged.rb
+    lib/xing/serializers/paged_index.rb
     lib/xing/serializers/root_resources.rb
     lib/xing/serializers.rb
     lib/xing/services/error_converter.rb
+    lib/xing/services/page_wrapper.rb
     lib/xing/services/json_tree_lister.rb
     lib/xing/services/locator.rb
     lib/xing/services/snapshot_fetcher.rb
@@ -55,6 +58,7 @@ Gem::Specification.new do |spec|
     spec/xing/mappers/base_spec.rb
     spec/xing/serializers/base_spec.rb
     spec/xing/serializers/paged_list_spec.rb
+    spec/xing/serializers/paged_index_spec.rb
     spec/xing/serializers/root_resources_spec.rb
     spec/xing/services/error_converter_spec.rb
     spec/xing/services/json_tree_lister_spec.rb
