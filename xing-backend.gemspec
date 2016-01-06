@@ -41,7 +41,6 @@ Gem::Specification.new do |spec|
     lib/xing/tasks/db_recycle.rake
     lib/xing/tasks/dependencies_common.rake
     lib/xing/tasks/take_snapshot.rake
-    lib/xing/tasks/generate_dummy_api.rake
     lib/xing/tasks/all.rake
     lib/xing/serializers.rb
     lib/xing/snapshot.rb
