@@ -155,7 +155,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails-rfc6570', '~> 0.3'
   spec.add_dependency 'json_spec', "~> 1.1"
   spec.add_dependency 'hash_validator', "~> 0.4"
+  spec.add_dependency 'rack-cors', "~> 0.4"
   spec.add_dependency 'sidekiq', "~> 3.3"
+  spec.add_dependency 'sinatra', '~> 1.3'
 
   # Snapshot reqs
   spec.add_dependency 'builder', "~> 3.1"

@@ -2,6 +2,7 @@ require 'rails'
 require 'xing_backend_token_auth'
 require 'rails/rfc6570'
 require 'sidekiq'
+require 'rack/cors'
 
 module Xing
   mattr_accessor :backend_subdomain
