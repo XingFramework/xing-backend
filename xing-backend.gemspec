@@ -27,7 +27,9 @@ Gem::Specification.new do |spec|
     config/routes.rb
     config/locales/json.yml
     app/models/role.rb
-
+    db/migrate/20140929192921_remove_login_from_users.rb
+    db/migrate/20140914030703_devise_token_auth_add_token_info_to_users.rb
+    db/migrate/20140828011806_initial.rb
     lib/xing/spec_helpers/dom_equiv.rb
     lib/xing/spec_helpers/routing_spec_patch.rb
     lib/xing/spec_helpers/split_servers.rb
