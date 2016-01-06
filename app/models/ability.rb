@@ -1,3 +1,4 @@
+## This is here as an example of how to use roles.
 class Ability
   include CanCan::Ability
 
