@@ -168,6 +168,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'builder', "~> 3.1"
   spec.add_dependency 'typhoeus', "~> 0.7"
   spec.add_dependency 'selenium-webdriver'
-
-
 end
