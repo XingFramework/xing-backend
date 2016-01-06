@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.files		= %w[
     config/routes.rb
     config/locales/json.yml
+    app/models/role.rb
+
     lib/xing/spec_helpers/dom_equiv.rb
     lib/xing/spec_helpers/routing_spec_patch.rb
     lib/xing/spec_helpers/split_servers.rb
@@ -61,6 +63,7 @@ Gem::Specification.new do |spec|
     lib/xing/services/paged_wrapper.rb
     lib/xing/services/locator.rb
     lib/xing/services/json_tree_lister.rb
+    lib/xing/services/class_registry.rb
     lib/xing/services.rb
     lib/xing/engine.rb
     lib/xing/static.rb
