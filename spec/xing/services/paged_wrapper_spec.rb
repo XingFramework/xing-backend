@@ -1,6 +1,6 @@
-require 'xing/services/page_wrapper'
+require 'xing/services/paged_wrapper'
 
-describe Xing::Services::PageWrapper do
+describe Xing::Services::PagedWrapper do
   let :list do
     [ :a, :b, :c ]
   end
@@ -18,7 +18,7 @@ describe Xing::Services::PageWrapper do
   end
 
   subject :wrapper do
-    Xing::Services::PageWrapper.new(list, page_num, total_items, per_page)
+    Xing::Services::PagedWrapper.new(list, page_num, total_items, per_page)
   end
 
   it{ expect(subject.current_page).to eq(page_num) }

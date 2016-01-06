@@ -1,8 +1,8 @@
 module Xing::Services
   # If you want to use the PagedList serializers, but are using resources that
   # aren't actually provided by Kaminari, you can instead feed them to
-  # PageWrapper and you should get everything you need
-  class PageWrapper
+  # PagedWrapper and you should get everything you need
+  class PagedWrapper
     include Enumerable
 
     def initialize(list, page_num, total_items, per_page)

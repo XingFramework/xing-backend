@@ -10,9 +10,7 @@ describe Xing::Services::ErrorConverter do
   before do
     # ensure that I18n can find the translation file needed for error
     # conversions
-    I18n.load_path += Dir[File.join(File.dirname(__FILE__),'../../..', 'config', 'locales', '*.{rb,yml}').tap do |dirn|
-      puts dirn
-    end]
+    I18n.load_path += Dir[File.join(File.dirname(__FILE__),'../../..', 'config', 'locales', '*.{rb,yml}')]
   end
 
 

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Xing::Builders::ListBuilder do
 
   let :builder do

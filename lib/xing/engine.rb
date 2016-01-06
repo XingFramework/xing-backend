@@ -3,6 +3,10 @@ module Xing
   class Engine < ::Rails::Engine
     isolate_namespace Xing
 
+    rake_tasks do
+      load "xing/tasks/all.rake"
+    end
+
     config.autoload_paths += Dir[File.join(__FILE__, '../controllers/**/')]
 
     config.generators do |g|
