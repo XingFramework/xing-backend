@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.20"
+  spec.version		= "0.0.21"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',
@@ -65,6 +65,7 @@ Gem::Specification.new do |spec|
     lib/xing/services/locator.rb
     lib/xing/services/json_tree_lister.rb
     lib/xing/services/class_registry.rb
+    lib/xing/services/log_json_responses.rb
     lib/xing/services.rb
     lib/xing/engine.rb
     lib/xing/static.rb

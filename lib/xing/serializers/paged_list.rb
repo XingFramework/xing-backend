@@ -16,6 +16,10 @@ module Xing::Serializers
       object.current_page
     end
 
+    def self_link
+        page_link(page: page_num)
+    end
+
     def next_link
       page_link({page: page_num + 1}) unless page_num == total_pages
     end
