@@ -8,6 +8,7 @@ module Xing
     end
 
     config.autoload_paths += Dir[File.join(__FILE__, '../controllers/**/')]
+    config.autoload_paths += Dir[File.join(__FILE__, '../../lib')]
 
     config.generators do |g|
       g.test_framework :rspec
