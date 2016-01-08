@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.21"
+  spec.version		= "0.0.22"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',

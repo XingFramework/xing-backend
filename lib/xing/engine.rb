@@ -6,7 +6,6 @@ module Xing
       load "xing/tasks/all.rake"
     end
 
-    paths.add "app/serializers", eager_load: true, autoload: true
     paths.add "lib", autoload: true
 
     config.generators do |g|
