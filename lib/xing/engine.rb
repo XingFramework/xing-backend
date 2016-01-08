@@ -1,5 +1,4 @@
 module Xing
-
   class Engine < ::Rails::Engine
     isolate_namespace Xing
 
@@ -7,8 +6,7 @@ module Xing
       load "xing/tasks/all.rake"
     end
 
-    config.autoload_paths += Dir[File.join(__FILE__, '../controllers/**/')]
-    config.autoload_paths += Dir[File.join(__FILE__, '../../lib')]
+    paths.add "lib", autoload: true
 
     config.generators do |g|
       g.test_framework :rspec
