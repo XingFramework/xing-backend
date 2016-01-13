@@ -8,7 +8,11 @@ module Xing
 
       def call(env)
         status, headers, body = @app.call(env)
-        headers["Set-Cookie"] = [(headers["Set-Cookie"]), "lrdBackendUrl=#@backend_url"].compact.join(";") unless @backend_url.nil?
+        headers["Set-Cookie"] = [
+          (headers["Set-Cookie"]),
+          "lrdBackendUrl=#@backend_url",
+          "xingBackendUrl=#{@backend_url}"
+        ].compact.join("\n") unless @backend_url.nil?
         [ status, headers, body ]
       end
     end
