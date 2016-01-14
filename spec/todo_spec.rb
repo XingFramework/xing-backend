@@ -2,4 +2,3 @@
 # coverage
 require 'xing/snapshot'
 require 'xing/spec_helpers'
-require 'xing/static'

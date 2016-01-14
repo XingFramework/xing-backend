@@ -54,10 +54,6 @@ Gem::Specification.new do |spec|
     lib/xing/nominal/yaml_config_validator.rb
     lib/xing/nominal/secrets_validator.rb
     lib/xing/mappers.rb
-    lib/xing/static/rack_app.rb
-    lib/xing/static/logger.rb
-    lib/xing/static/backend_url_cookie.rb
-    lib/xing/static/goto_param.rb
     lib/xing/builders/ordered_list_builder.rb
     lib/xing/builders/list_builder.rb
     lib/xing/services/error_converter.rb
@@ -68,7 +64,6 @@ Gem::Specification.new do |spec|
     lib/xing/services/log_json_responses.rb
     lib/xing/services.rb
     lib/xing/engine.rb
-    lib/xing/static.rb
     lib/xing/snapshot/writer.rb
     lib/xing/snapshot/site_snapshot.rb
     lib/xing/snapshot/remote_site_snapshot.rb
