@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-gemspec :name => "xing-backend"
-
 gem 'byebug'
 gem 'cadre'
 gem 'corundum'
@@ -16,3 +14,4 @@ gem 'fuubar', "~> 2.0.0.rc1"
 gem 'kaminari'
 
 gem 'codeclimate-test-reporter', group: :test, require: nil
+gemspec :name => "xing-backend"

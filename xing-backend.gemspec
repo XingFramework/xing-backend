@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name		= "xing-backend"
-  spec.version		= "0.0.23"
+  spec.version		= "0.0.24"
   author_list = {
     "Evan Dorn" => 'evan@lrdesign.com',
     "Patricia Ho" => 'patricia@lrdesign.com',
@@ -54,10 +54,6 @@ Gem::Specification.new do |spec|
     lib/xing/nominal/yaml_config_validator.rb
     lib/xing/nominal/secrets_validator.rb
     lib/xing/mappers.rb
-    lib/xing/static/rack_app.rb
-    lib/xing/static/logger.rb
-    lib/xing/static/backend_url_cookie.rb
-    lib/xing/static/goto_param.rb
     lib/xing/builders/ordered_list_builder.rb
     lib/xing/builders/list_builder.rb
     lib/xing/services/error_converter.rb
@@ -68,7 +64,6 @@ Gem::Specification.new do |spec|
     lib/xing/services/log_json_responses.rb
     lib/xing/services.rb
     lib/xing/engine.rb
-    lib/xing/static.rb
     lib/xing/snapshot/writer.rb
     lib/xing/snapshot/site_snapshot.rb
     lib/xing/snapshot/remote_site_snapshot.rb
@@ -157,6 +152,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'active_model_serializers', "~> 0.9", ">= 0.9.3"
   spec.add_dependency 'i18n', "~> 0.7"
   spec.add_dependency 'xing_backend_token_auth', "~> 0.1", ">= 0.1.31"
+  spec.add_dependency 'xing-dev-assets', "> 0", "<= 1.0"
   spec.add_dependency 'rails-rfc6570', '~> 0.3'
   spec.add_dependency 'json_spec', "~> 1.1"
   spec.add_dependency 'hash_validator', "~> 0.4"
