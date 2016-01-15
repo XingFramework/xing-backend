@@ -1,5 +1,6 @@
 require 'simplecov-json'
 require 'cadre/simplecov'
+require 'codeclimate-test-reporter'
 
 SimpleCov.start do
   coverage_dir "corundum/docs/coverage"
@@ -9,6 +10,7 @@ SimpleCov.start do
   formatter SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::JSONFormatter,
     SimpleCov::Formatter::HTMLFormatter,
-    Cadre::SimpleCov::VimFormatter
+    Cadre::SimpleCov::VimFormatter,
+    CodeClimate::TestReporter::Formatter
   ])
 end
