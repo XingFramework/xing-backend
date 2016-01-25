@@ -30,10 +30,12 @@ Gem::Specification.new do |spec|
     db/migrate/20140929192921_remove_login_from_users.rb
     db/migrate/20140914030703_devise_token_auth_add_token_info_to_users.rb
     db/migrate/20140828011806_initial.rb
+    lib/xing/spec_helpers.rb
     lib/xing/spec_helpers/dom_equiv.rb
     lib/xing/spec_helpers/routing_spec_patch.rb
     lib/xing/spec_helpers/split_servers.rb
     lib/xing/spec_helpers/json_requests.rb
+    lib/xing/spec_helpers/json_helpers.rb
     lib/xing/spec_helpers/api_response_matchers.rb
     lib/xing/spec_helpers/test_url_helpers.rb
     lib/xing/spec_helpers/ci_support.rb
@@ -45,7 +47,6 @@ Gem::Specification.new do |spec|
     lib/xing/serializers.rb
     lib/xing/snapshot.rb
     lib/xing/mappers/base.rb
-    lib/xing/spec_helpers.rb
     lib/xing/builders.rb
     lib/xing/controllers/root_resources_controller.rb
     lib/xing/controllers/base.rb
@@ -148,7 +149,7 @@ Gem::Specification.new do |spec|
   spec.rdoc_options	+= ["--title", "#{spec.name}-#{spec.version} Documentation"]
 
 
-  spec.add_dependency 'rails', ">= 4.2.5.1", "< 4.3" 
+  spec.add_dependency 'rails', ">= 4.2.5.1", "< 4.3"
   spec.add_dependency 'active_model_serializers', "~> 0.9", ">= 0.9.3"
   spec.add_dependency 'i18n', "~> 0.7"
   spec.add_dependency 'xing_backend_token_auth', "~> 0.1", ">= 0.1.31"
