@@ -5,7 +5,7 @@ gem 'cadre'
 gem 'corundum'
 gem 'sqlite3'
 gem 'json_spec'
-gem 'actionpack'
+gem 'actionpack', "~> 4.2.5.2"
 gem 'rspec', "~> 3.2"
 gem 'rspec-rails'
 gem 'simplecov'
